@@ -1,0 +1,126 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <h2>Filters</h2>
+                <div class="filter-group">
+                    <label for="endYear">End Year</label>
+                    <input type="range" id="endYear" min="2020" max="2050" value="2020">
+                    <span id="endYearValue">2020</span>
+                </div>
+                <div class="filter-group">
+                    <label for="topics">Topics</label>
+                    <select id="topics" multiple>
+                        <option value="">Select topics</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sector">Sector</label>
+                    <select id="sector">
+                        <option value="">Select sector</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="region">Region</label>
+                    <select id="region">
+                        <option value="">Select region</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="pest">PEST</label>
+                    <select id="pest">
+                        <option value="">Select PEST</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="source">Source</label>
+                    <select id="source" multiple>
+                        <option value="">Select source</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="country">Country</label>
+                    <select id="country" multiple>
+                        <option value="">Select country</option>
+                    </select>
+                </div>
+                <!-- Remove city filter if not needed -->
+                 <div class="filter-group">
+                    <label for="city">City</label>
+                    <select id="city" multiple>
+                        <option value="">Select city</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-9 main-content">
+                <h1>Data Visualization Dashboard</h1>
+                <div class="chart-grid">
+                    <div class="chart-card">
+                        <h2>Intensity</h2>
+                        <div class="chart-container">
+                            <svg id="intensityChart" width="600" height="400"></svg>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h2>Likelihood</h2>
+                        <div class="chart-container">
+                            <svg id="likelihoodChart" width="600" height="400"></svg>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h2>Relevance</h2>
+                        <div class="chart-container">
+                            <svg id="relevanceChart" width="600" height="400"></svg>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h2>Year</h2>
+                        <div class="chart-container">
+                            <svg id="yearChart" width="600" height="400"></svg>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h2>Country</h2>
+                        <div class="chart-container">
+                            <svg id="countryChart" width="600" height="400"></svg>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h2>Topics</h2>
+                        <div class="chart-container">
+                            <svg id="topicsChart" width="600" height="400"></svg>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h2>Region</h2>
+                        <div class="chart-container">
+                            <svg id="regionChart" width="600" height="400"></svg>
+                        </div>
+                    </div>
+                    <!-- Remove city chart if not needed -->
+                    <div class="chart-card">
+                        <h2>City</h2>
+                        <div class="chart-container">
+                            <svg id="cityChart" width="600" height="400"></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
